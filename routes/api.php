@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\common\AuthController;
+use App\Http\Controllers\user\UserController as UserUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 });
 Route::Resource('admin_users',UserController::class);
+Route::Resource('users',UserUserController::class);
 
 
 Route::Resource('login_user',AuthController::class);

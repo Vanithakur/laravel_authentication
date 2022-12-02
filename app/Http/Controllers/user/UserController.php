@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\StoreUserRequest;
@@ -21,8 +21,7 @@ class UserController extends Controller
                 $users = User::where('name', 'LIKE', "%$search%")
                     ->orWhere('email', 'LIKE', "%$search%")->get();
             } else {
-              
-                    $users = User::all();
+                $users = User::all();
             }
 
             return UserResource::collection($users);

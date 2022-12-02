@@ -17,13 +17,12 @@ class UserSeeder extends Seeder
     {
 
         // role
-        $adminRole = Role::create(['name' => 'Admin', 'description' => 'admin_role']);
-        $adminTutor = Role::create(['name' => 'Tutor', 'description' => 'tutor_role']);
-        $adminStudent = Role::create(['name' => 'Student', 'description' => 'student_role']);
+        Role::create(['name' => 'Admin', 'description' => 'admin_role']);
+        Role::create(['name' => 'User', 'description' => 'tutor_role']);
+
 
         // permission
-        $permissionAdmin = Permission::create(['name' => 'manage tasks']);
-        $permissionUser = Permission::create(['name' => 'create tasks']);
-
+        Permission::create(['name' => 'manage tasks']);
+        Permission::create(['name' => 'create tasks']);
     }
 }
