@@ -36,10 +36,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, User $user)
+    public function show(Request $request, $id)
     {
         try {
-            $user = User::where('id', $user->id)->get();
+            $user = User::where('id', $id)->get();
 
             return UserResource::collection($user);
         } catch (\Throwable $e) {
